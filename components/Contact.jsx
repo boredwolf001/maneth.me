@@ -15,7 +15,6 @@ function Contact() {
     <Container id='about' mt='100' maxW='container.xl'>
       <Text
         mb='35'
-        fontSize='4xl'
         fontWeight='bold'
         textTransform='uppercase'
         className='section-heading'
@@ -23,43 +22,9 @@ function Contact() {
         Contact Me
       </Text>
       <Flex
-        direction={[
-          'column-reverse',
-          'column-reverse',
-          'row-reverse',
-          'row-reverse',
-        ]}
+        direction={['column', 'column', 'row', 'row']}
         justify='space-around'
       >
-        <Box mb={{ md: '10', sm: '10' }} flex='1'>
-          <Box w={['100%', '100%', '85%', '85%']}>
-            <form>
-              <FormControl mb='5'>
-                <FormLabel htmlFor='name'>Name</FormLabel>
-                <Input id='text' type='text' />
-              </FormControl>
-              <FormControl mb='5'>
-                <FormLabel htmlFor='email'>Email address</FormLabel>
-                <Input id='email' type='email' />
-              </FormControl>
-              <FormControl mb='4'>
-                <FormLabel htmlFor='message'>Message</FormLabel>
-                <Textarea id='message' />
-              </FormControl>
-
-              <Button
-                w='full'
-                variant='outline'
-                type='submit'
-                colorScheme='teal'
-              >
-                Send
-              </Button>
-            </form>
-          </Box>
-        </Box>
-
-        {/* 2 */}
         <Box flex='1'>
           <Box maxW={{ lg: '85%', xl: '' }}>
             <Text fontWeight='900' fontSize='4xl' mb='3'>
@@ -97,6 +62,29 @@ function Contact() {
                 </Text>
               </Flex>
             </Box>
+          </Box>
+        </Box>
+
+        <Box mt={[10, 10, 0, 0]} flex='1'>
+          <Box w={['100%', '100%', '85%', '85%']}>
+            <form>
+              <FormControl mb='5'>
+                <FormLabel htmlFor='name'>Name</FormLabel>
+                <Input id='text' type='text' />
+              </FormControl>
+              <FormControl mb='5'>
+                <FormLabel htmlFor='email'>Email address</FormLabel>
+                <Input id='email' type='email' />
+              </FormControl>
+              <FormControl mb='4'>
+                <FormLabel htmlFor='message'>Message</FormLabel>
+                <Textarea id='message' />
+              </FormControl>
+
+              <Button w='full' type='submit' colorScheme='twitter'>
+                Send
+              </Button>
+            </form>
           </Box>
         </Box>
       </Flex>

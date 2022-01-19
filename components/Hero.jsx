@@ -17,7 +17,7 @@ function Hero() {
           direction={['column', 'column', 'row', 'row']}
           justify={'space-between'}
         >
-          <Box maxW='lg' marginBottom={['30', '30', '0', '0']}>
+          <Box maxW='lg' marginBottom={['50', '50', '0', '0']}>
             <Text fontSize='6xl' lineHeight='1' mb='6' fontWeight='black'>
               Let&apos;s Build Something{' '}
               <Box
@@ -28,24 +28,19 @@ function Hero() {
               >
                 More
               </Box>
+              {''}
               Exciting
             </Text>
 
             {/* Para */}
-            <Text
-              // textColor={{ light: 'black', dark: 'white' }}
-              maxW='xl'
-              mt='2'
-              mb='5'
-            >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Doloribus facere esse quisquam doloremque minus veniam, molestiae
-              repellat tenetur nemo, qui inventore, nisi nam alias. Quidem iusto
-              modi obcaecati minus numquam?
+            <Text maxW='xl' mt='2' mb='5'>
+              I&apos;m a GUY from Sri Lanka who love to code and experiment with
+              new technologies and solutions. I build unique and fullstack web
+              apps. Want to hire me?
             </Text>
 
             <Link display='block' textDecor='none !important' href='#contact'>
-              <Button colorScheme='teal'>
+              <Button colorScheme='twitter'>
                 Let&apos;s Talk <ChevronRightIcon ml='1' fontSize='xl' />
               </Button>
             </Link>

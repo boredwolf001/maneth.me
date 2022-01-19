@@ -12,8 +12,8 @@ function About() {
       >
         About
       </Text>
-      <Flex align='start' direction={['column', 'column', 'row', 'row']}>
-        <Box flex='1'>
+      <Flex direction={['column', 'column', 'row', 'row']}>
+        <Box mb={['30', '30', '0', '0']} flex='1'>
           <Image
             boxSize='85%'
             objectFit='cover'
