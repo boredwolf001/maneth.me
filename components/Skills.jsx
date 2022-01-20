@@ -35,7 +35,7 @@ function Skills() {
       </Text>
       <Flex direction={['column', 'column', 'row', 'row']}>
         <Box flex='1'>
-          <Text
+          {/* <Text
             // bgGradient='linear(90deg, #e3ffe7 0%, #d9e7ff 100%)'
             // bgClip='text'
             mb='3'
@@ -43,7 +43,7 @@ function Skills() {
             fontWeight='900'
           >
             Wanna hire me Right now?
-          </Text>
+          </Text> */}
           <Text mb='6' w='85%'>
             With over than 3 years of development experience I am familier with
             technologies like Arduino, Svelte, React, Node, Django and Wordpres.
@@ -51,7 +51,7 @@ function Skills() {
             to view some of my Work?
           </Text>
 
-          <Button colorScheme='twitter'>
+          <Button colorScheme='whatsapp'>
             Projects <ChevronRightIcon fontSize='lg' />
           </Button>
 

@@ -34,13 +34,13 @@ function Hero() {
 
             {/* Para */}
             <Text maxW='xl' mt='2' mb='5'>
-              I&apos;m a GUY from Sri Lanka who love to code and experiment with
+              I&apos;m a guy from Sri Lanka who love to code and experiment with
               new technologies and solutions. I build unique and fullstack web
               apps. Want to hire me?
             </Text>
 
             <Link display='block' textDecor='none !important' href='#contact'>
-              <Button colorScheme='twitter'>
+              <Button colorScheme='whatsapp'>
                 Let&apos;s Talk <ChevronRightIcon ml='1' fontSize='xl' />
               </Button>
             </Link>

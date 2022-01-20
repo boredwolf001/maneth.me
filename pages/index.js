@@ -1,8 +1,12 @@
-import About from '../components/About'
-import Hero from '../components/Hero'
-import Contact from '../components/Contact'
-import Navbar from '../components/Navbar'
-import Skills from '../components/Skills'
+import {
+  About,
+  Hero,
+  Navbar,
+  Skills,
+  Work,
+  Contact,
+  Footer,
+} from '../components'
 
 export default function Home() {
   return (
@@ -11,7 +15,9 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <Work />
       <Contact />
+      <Footer />
     </>
   )
 }
