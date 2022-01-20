@@ -117,8 +117,8 @@ function Skills() {
               Languages
             </Text>
             <Flex>
-              {skillImages.languages.map((img) => (
-                <SkillItem imgSrc={`/skills/${img}`} />
+              {skillImages.languages.map((img, i) => (
+                <SkillItem key={i} imgSrc={`/skills/${img}`} />
               ))}
             </Flex>
           </Box>
@@ -129,8 +129,8 @@ function Skills() {
               Frameworks
             </Text>
             <Flex>
-              {skillImages.frameworks.map((img) => (
-                <SkillItem imgSrc={`/skills/${img}`} />
+              {skillImages.frameworks.map((img, i) => (
+                <SkillItem imgSrc={`/skills/${img}`} key={i} />
               ))}
             </Flex>
           </Box>
@@ -141,8 +141,8 @@ function Skills() {
               Tools
             </Text>
             <Flex>
-              {skillImages.tools.map((img) => (
-                <SkillItem imgSrc={`/skills/${img}`} />
+              {skillImages.tools.map((img, i) => (
+                <SkillItem imgSrc={`/skills/${img}`} key={i} />
               ))}
             </Flex>
           </Box>
