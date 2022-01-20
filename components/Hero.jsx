@@ -11,24 +11,29 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 
 function Hero() {
   return (
-    <Box mt='50' w='full'>
+    <Box mt='75' w='full'>
       <Container w='full' maxW='container.xl'>
         <Flex
+          justify='space-between'
           direction={['column', 'column', 'row', 'row']}
-          justify={'space-between'}
         >
-          <Box maxW='lg' marginBottom={['50', '50', '0', '0']}>
-            <Text fontSize='6xl' lineHeight='1' mb='6' fontWeight='black'>
+          <Box maxW='lg' marginBottom={['50', '50', '0', '0']} mr='75'>
+            <Text
+              fontFamily='Playfair Display'
+              fontSize='6xl'
+              lineHeight='1'
+              mb='6'
+              fontWeight='800'
+            >
               Let&apos;s Build Something{' '}
               <Box
-                textColor='white'
-                bgGradient='linear(to-l, #7928CA, #FF0080)'
-                bgClip='text'
+                textColor='teal.300'
+                // bgGradient='linear(to-l, #7928CA, #FF0080)'
+                // bgClip='text'
                 display='inline-block'
               >
-                More
+                More{' '}
               </Box>
-              {''}
               Exciting
             </Text>
 
@@ -40,13 +45,23 @@ function Hero() {
             </Text>
 
             <Link display='block' textDecor='none !important' href='#contact'>
-              <Button colorScheme='whatsapp'>
+              <Button colorScheme='teal'>
                 Let&apos;s Talk <ChevronRightIcon ml='1' fontSize='xl' />
               </Button>
             </Link>
           </Box>
           <Box>
-            <Image w='80%' src='/banner.png' />
+            <Image
+              display={['none', 'none', 'block', 'block']}
+              transform={[
+                'translateY(0) rotate(45deg) scale(.8)',
+                'translateY(0) rotate(45deg) scale(.8)',
+                'translateY(-100px) rotate(45deg) scale(.8)',
+                'translateY(-100px) rotate(45deg) scale(.8)',
+              ]}
+              w='50%'
+              src='/banner.png'
+            />
           </Box>
         </Flex>
       </Container>

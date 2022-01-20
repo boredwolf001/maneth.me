@@ -5,7 +5,7 @@ function About() {
     <Container id='about' mt='70' maxW='container.xl'>
       <Text
         className='section-heading'
-        mb='35'
+        mb='50'
         fontSize='4xl'
         fontWeight='bold'
         textTransform='uppercase'
@@ -13,14 +13,6 @@ function About() {
         About
       </Text>
       <Flex direction={['column', 'column', 'row', 'row']}>
-        <Box mb={['30', '30', '0', '0']} flex='1'>
-          <Image
-            boxSize='90%'
-            objectFit='cover'
-            rounded='md'
-            src='/profile.jpg'
-          />
-        </Box>
         <Box flex='2'>
           <Text fontSize='4xl' mb='6' fontWeight='bold'>
             Hey, I am maneth
@@ -40,6 +32,11 @@ function About() {
               beautiful and user interaction that feels natural.
             </Text>
           </Box>
+        </Box>
+
+        {/* Img */}
+        <Box mt={['30', '30', '0', '0']} flex='3'>
+          <Image w='90%' rounded='md' src='/profile.png' />
         </Box>
       </Flex>
     </Container>

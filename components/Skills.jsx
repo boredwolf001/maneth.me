@@ -1,8 +1,34 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { Box, Button, Container, Flex, Text, Image } from '@chakra-ui/react'
-import Particles from 'react-tsparticles'
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Text,
+  Image,
+  Stack,
+  HStack,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+
+const StatCrd = ({ statTitle, statVal }) => {
+  const cardColor = useColorModeValue('whiteAplha.400', 'blackAlpha.400')
+
+  return (
+    <Box p='5' flex='1' bg={cardColor} boxShadow='lg' borderRadius='md'>
+      <Text opacity='.8'>{statTitle}</Text>
+      <Text fontSize='xl' mt='1'>
+        {statVal}
+      </Text>
+    </Box>
+  )
+}
 
 function Skills() {
+  const [githubStats, setGithubStats] = useState({})
+  const [loading, setLoading] = useState(true)
+
   const skillImages = {
     tools: [
       'adobe-photoshop.png',
@@ -11,16 +37,26 @@ function Skills() {
       'visual-studio-code.png',
     ],
     languages: ['html.png', 'css.png', 'python.png', 'javascript.png'],
-    frameworks: [
-      'react.png',
-      // 'nodejs.png',
-      'django.png',
-      'arduino.png',
-      'wordpress.png',
-    ],
+    frameworks: ['react.png', 'django.png', 'arduino.png', 'wordpress.png'],
   }
 
-  const textureLayout = [1, 2, 1, 1, 2, 1, 2, 2]
+  useEffect(() => {
+    const fetchGithubStats = async () => {
+      const res = await fetch('https://api.github.com/users/manethye', {
+        method: 'GET',
+        headers: {
+          Authorization: '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',
+        },
+      })
+      const data = await res.json()
+
+      console.log(data)
+      setGithubStats(data)
+      setLoading(false)
+    }
+
+    fetchGithubStats()
+  }, [])
 
   return (
     <Container maxW='container.xl' mt='100'>
@@ -35,15 +71,6 @@ function Skills() {
       </Text>
       <Flex direction={['column', 'column', 'row', 'row']}>
         <Box flex='1'>
-          {/* <Text
-            // bgGradient='linear(90deg, #e3ffe7 0%, #d9e7ff 100%)'
-            // bgClip='text'
-            mb='3'
-            fontSize='4xl'
-            fontWeight='900'
-          >
-            Wanna hire me Right now?
-          </Text> */}
           <Text mb='6' w='85%'>
             With over than 3 years of development experience I am familier with
             technologies like Arduino, Svelte, React, Node, Django and Wordpres.
@@ -51,90 +78,35 @@ function Skills() {
             to view some of my Work?
           </Text>
 
-          <Button colorScheme='whatsapp'>
+          <Button colorScheme='teal'>
             Projects <ChevronRightIcon fontSize='lg' />
           </Button>
 
-          {/* Web Texture */}
-          {/* <Box mt='5' w='full' height='full' position='relative'>
-            {textureLayout.map((choice) => (
-              <Image w='7' src={choice === 1 ? '/www.png' : '/https.png'} />
-            ))}
-          </Box> */}
-          <Box position='relative' w='200px'>
-            {/* <Particles
-              style={{
-                zIndex: '10000',
-                positon: 'absolute !important',
-                top: '0',
-                left: '0',
-                width: '100%',
-              }}
-              params={{
-                fps_limit: 28,
-                particles: {
-                  collisions: {
-                    enable: false,
-                  },
-                  number: {
-                    value: 200,
-                    density: {
-                      enable: false,
-                    },
-                  },
-                  line_linked: {
-                    enable: true,
-                    distance: 30,
-                    opacity: 0.4,
-                  },
-                  move: {
-                    speed: 1,
-                  },
-                  opacity: {
-                    anim: {
-                      enable: true,
-                      opacity_min: 0.05,
-                      speed: 1,
-                      sync: false,
-                    },
-                    value: 0.4,
-                  },
-                },
-                polygon: {
-                  enable: true,
-                  scale: 0.5,
-                  type: 'inline',
-                  move: {
-                    radius: 10,
-                  },
-                  url: '/small-deer.2a0425af.svg',
-                  inline: {
-                    arrangement: 'equidistant',
-                  },
-                  draw: {
-                    enable: true,
-                    stroke: {
-                      color: 'rgba(255, 255, 255, .2)',
-                    },
-                  },
-                },
-                retina_detect: false,
-                interactivity: {
-                  events: {
-                    onhover: {
-                      enable: true,
-                      mode: 'bubble',
-                    },
-                  },
-                  modes: {
-                    bubble: {
-                      size: 6,
-                      distance: 40,
-                    },
-                  },
-                },
-              }}
-            /> */}
+          {/* Github stats */}
+          <Box pt='14' w='85%'>
+            {loading ? (
+              <h1>Loading</h1>
+            ) : (
+              <Box>
+                <HStack>
+                  {/* Public Repos */}
+                  <StatCrd
+                    statTitle='Repos'
+                    statVal={githubStats.public_repos}
+                  />
+
+                  <StatCrd
+                    statTitle='Followers'
+                    statVal={githubStats.followers}
+                  />
+
+                  <StatCrd
+                    statTitle='Following'
+                    statVal={githubStats.following}
+                  />
+                </HStack>
+              </Box>
+            )}
           </Box>
         </Box>
 

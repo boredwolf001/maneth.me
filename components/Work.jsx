@@ -1,4 +1,13 @@
-import { Box, Button, Container, Flex, Text, Image } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Text,
+  Image,
+  Link,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import React from 'react'
 
 const Work = () => {
@@ -12,13 +21,13 @@ const Work = () => {
     {
       title: 'Stackoverflow Clone',
       desc: 'This is a stackoverflow clone which made with Django',
-      img: '1.jpg',
-      githubLink: 'https://github.com/manethye/django-questacks',
+      img: '2.jpg',
+      githubLink: 'https://github.com/manethye/questacks-django',
     },
     {
       title: 'Netflix UI Clone',
       desc: 'This is a clone Netflix UI made with pure HTML/CSS',
-      img: '1.jpg',
+      img: '3.jpg',
       githubLink: 'https://github.com/manethye/netflix-ui-clone',
     },
   ]
@@ -38,46 +47,64 @@ const Work = () => {
         direction={{ md: 'column', sm: 'column', lg: 'row', xl: 'row' }}
         justifyContent='center'
       >
-        {projects.map((project) => (
-          <Box
-            p='4'
-            bg={{
-              dark: 'rgba(0, 0, 0, 0.8)',
-              light: 'rgba(255, 255, 255, 0.6)',
-            }}
-            boxShadow='lg'
-            rounded='md'
-            mr='4'
-          >
-            <Text
-              fontFamily='Playfair Display'
-              textAlign='center'
-              mb='6'
-              fontWeight='800'
-              fontSize='3xl'
-            >
-              {project.title}
-            </Text>
-            <Image
-              src={`/projects/${project.img}`}
-              rounded='md'
-              objectFit='cover'
-              w='90%'
-              m='0 auto'
-              mb='5'
-            />
-
-            <Text mb='5' maxW='85%'>
-              {project.desc}
-            </Text>
-
-            <Button variant='outline' colorScheme='whatsapp' w='full'>
-              View on Github
-            </Button>
-          </Box>
+        {projects.map((project, i) => (
+          <ProjectCrd
+            key={i}
+            img={`/projects/${project.img}`}
+            github={project.githubLink}
+            title={project.title}
+            desc={project.desc}
+          />
         ))}
       </Flex>
     </Container>
+  )
+}
+
+const ProjectCrd = ({ img, github, title, desc }) => {
+  const cardColor = useColorModeValue('whiteAlpha.400', 'blackAlpha.400')
+
+  return (
+    <Box
+      p='4'
+      // bg={{
+      //   dark: 'rgba(0, 0, 0, 0.8)',
+      //   light: '',
+      // }}
+      bg={cardColor}
+      boxShadow='lg'
+      rounded='md'
+      mr={['0', '0', '4', '4']}
+      mb={['4', '4', '0', '0']}
+    >
+      <Text
+        // fontFamily='Playfair Display'
+        textAlign='center'
+        mb='6'
+        fontWeight='800'
+        fontSize='3xl'
+      >
+        {title}
+      </Text>
+      <Image
+        src={img}
+        rounded='md'
+        objectFit='cover'
+        w='90%'
+        m='0 auto'
+        mb='5'
+      />
+
+      <Text textAlign='center' mb='5' maxW='85%'>
+        {desc}
+      </Text>
+
+      <Link textDecor='none !important' href={github}>
+        <Button variant='outline' colorScheme='teal' w='full'>
+          View on Github
+        </Button>
+      </Link>
+    </Box>
   )
 }
 

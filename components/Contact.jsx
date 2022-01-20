@@ -81,7 +81,7 @@ function Contact() {
                 <Textarea id='message' />
               </FormControl>
 
-              <Button w='full' type='submit' colorScheme='whatsapp'>
+              <Button w='full' type='submit' colorScheme='teal'>
                 Send
               </Button>
             </form>
