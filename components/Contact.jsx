@@ -35,7 +35,7 @@ function Contact() {
                 display='inline-block'
               > */}
               <span className='gradient-text'>Collaborators</span>
-              {/* </Box> */}? Let's have a chat!
+              {/* </Box> */}? Let&apos;s have a chat!
             </Text>
 
             {/* Text */}

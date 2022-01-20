@@ -74,8 +74,8 @@ function Skills() {
           <Text mb='6' w='85%'>
             With over than 3 years of development experience I am familier with
             technologies like Arduino, Svelte, React, Node, Django and Wordpres.
-            I love to make cool and modern projects to sharpen my skills. Wan't
-            to view some of my Work?
+            I love to make cool and modern projects to sharpen my skills.
+            Wan&apos;t to view some of my Work?
           </Text>
 
           <Button colorScheme='teal'>
