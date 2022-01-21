@@ -22,7 +22,7 @@ function Hero() {
               lineHeight='1'
               mb='6'
               fontWeight='800'
-              fontFamily='Playfair Display'
+              // fontFamily='Playfair Display'
               w={['full', 'full', '80%', '80%']}>
               Let&apos;s Build Something More Exciting
             </Text>
@@ -44,14 +44,14 @@ function Hero() {
             <Image
               alt='3d Rocket Banner Image For The Hero Section'
               display={['none', 'none', 'block', 'block']}
-              transform={[
-                'translateY(0) rotate(45deg) scale(.8)',
-                'translateY(0) rotate(45deg) scale(.8)',
-                'translateY(-100px) rotate(45deg) scale(.8)',
-                'translateY(-100px) rotate(45deg) scale(.8)',
-              ]}
-              w='50%'
-              src='/banner.png'
+              // transform={[
+              //   'translateY(0) rotate(45deg) scale(.8)',
+              //   'translateY(0) rotate(45deg) scale(.8)',
+              //   'translateY(-100px) rotate(45deg) scale(.8)',
+              //   'translateY(-100px) rotate(45deg) scale(.8)',
+              // ]}
+              w='75%'
+              src='/banner.svg'
             />
           </Box>
         </Flex>

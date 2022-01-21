@@ -38,7 +38,7 @@ const Work = () => {
         className='section-heading'
         fontSize='3xl'
         fontWeight='bold'
-        mb='30'>
+        mb='10'>
         Top Projects
       </Text>
       <Flex

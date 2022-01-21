@@ -17,14 +17,12 @@ function Contact() {
         mb='35'
         fontWeight='bold'
         textTransform='uppercase'
-        className='section-heading'
-      >
+        className='section-heading'>
         Contact Me
       </Text>
       <Flex
         direction={['column', 'column', 'row', 'row']}
-        justify='space-around'
-      >
+        justify='space-around'>
         <Box flex='1'>
           <Box maxW={{ lg: '85%', xl: '85%' }}>
             <Text fontWeight='900' fontSize='4xl' mb='3'>
@@ -68,20 +66,20 @@ function Contact() {
         <Box mt={[10, 10, 0, 0]} flex='1'>
           <Box w={['100%', '100%', '85%', '85%']}>
             <form>
-              <FormControl mb='5'>
+              <FormControl colorScheme='teal' mb='5'>
                 <FormLabel htmlFor='name'>Name</FormLabel>
                 <Input id='text' type='text' />
               </FormControl>
-              <FormControl mb='5'>
+              <FormControl colorScheme='teal' mb='5'>
                 <FormLabel htmlFor='email'>Email address</FormLabel>
                 <Input id='email' type='email' />
               </FormControl>
-              <FormControl mb='4'>
+              <FormControl colorScheme='teal' mb='4'>
                 <FormLabel htmlFor='message'>Message</FormLabel>
                 <Textarea id='message' />
               </FormControl>
 
-              <Button w='full' type='submit' colorScheme='teal'>
+              <Button w='full' colorScheme='teal' type='submit'>
                 Send
               </Button>
             </form>
