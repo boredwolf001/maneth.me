@@ -12,7 +12,7 @@ import {
 
 function Contact() {
   return (
-    <Container id='about' mt='100' maxW='container.xl'>
+    <Container id='contact' mt='100' maxW='container.xl'>
       <Text
         mb='35'
         fontWeight='bold'
@@ -26,7 +26,7 @@ function Contact() {
         justify='space-around'
       >
         <Box flex='1'>
-          <Box maxW={{ lg: '85%', xl: '' }}>
+          <Box maxW={{ lg: '85%', xl: '85%' }}>
             <Text fontWeight='900' fontSize='4xl' mb='3'>
               Any,{' '}
               {/* <Box

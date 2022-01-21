@@ -11,7 +11,7 @@ function Footer() {
   const footerColor = useColorModeValue('whiteAlpha.500', 'blackAlpha.400')
 
   return (
-    <Box mt='100' bgColor={footerColor} py='6'>
+    <Box mt='100' w='full' bgColor={footerColor} py='6'>
       <Container maxW='container.xl'>
         <Flex direction={{ sm: 'column', md: 'column', lg: 'row', xl: 'row' }}>
           <Box flex='1'>

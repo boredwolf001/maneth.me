@@ -33,7 +33,7 @@ const Work = () => {
   ]
 
   return (
-    <Container maxW='container.xl' mt='100'>
+    <Container id='work' maxW='container.xl' mt='100'>
       <Text
         className='section-heading'
         fontSize='3xl'
@@ -44,7 +44,7 @@ const Work = () => {
       </Text>
       <Flex
         alignItems='center'
-        direction={{ md: 'column', sm: 'column', lg: 'row', xl: 'row' }}
+        direction={['column', 'column', 'row', 'row']}
         justifyContent='center'
       >
         {projects.map((project, i) => (

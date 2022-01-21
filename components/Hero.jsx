@@ -17,24 +17,16 @@ function Hero() {
           justify='space-between'
           direction={['column', 'column', 'row', 'row']}
         >
-          <Box maxW='lg' marginBottom={['50', '50', '0', '0']} mr='75'>
+          <Box marginBottom={['50', '50', '0', '0']} mr='75'>
             <Text
-              fontFamily='Playfair Display'
               fontSize='6xl'
               lineHeight='1'
               mb='6'
               fontWeight='800'
+	      fontFamily="Playfair Display"
+              w={['full', 'full', '80%', '80%']}
             >
-              Let&apos;s Build Something{' '}
-              <Box
-                textColor='teal.300'
-                // bgGradient='linear(to-l, #7928CA, #FF0080)'
-                // bgClip='text'
-                display='inline-block'
-              >
-                More{' '}
-              </Box>
-              Exciting
+              Let&apos;s Build Something More Exciting
             </Text>
 
             {/* Para */}

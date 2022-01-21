@@ -17,7 +17,7 @@ function About() {
           <Text fontSize='4xl' mb='6' fontWeight='bold'>
             Hey, I am maneth
           </Text>
-          <Box maxW='md'>
+          <Box>
             <Text lineHeight='2' mb='3' fontSize='lg'>
               I am maneth, a full stack dev from Sri Lanka. I love experimenting
               with the newest technologies and always look to learn new things.

@@ -57,10 +57,10 @@ function Nabvar() {
             direction={'row'}
             pt={[4, 4, 0, 0]}
           >
-            <LinkItem to='#'>About Me</LinkItem>
-            <LinkItem to='#'>Skills</LinkItem>
-            <LinkItem to='#'>Work</LinkItem>
-            <LinkItem to='#'>Contact</LinkItem>
+            <LinkItem to='#about'>About Me</LinkItem>
+            <LinkItem to='#skills'>Skills</LinkItem>
+            <LinkItem to='#work'>Work</LinkItem>
+            <LinkItem to='#contact'>Contact</LinkItem>
 
             <ModeToggle />
           </Stack>

@@ -59,7 +59,7 @@ function Skills() {
   }, [])
 
   return (
-    <Container maxW='container.xl' mt='100'>
+    <Container id='skills' maxW='container.xl' mt='100'>
       <Text
         mb='30'
         fontWeight='bold'
@@ -71,7 +71,7 @@ function Skills() {
       </Text>
       <Flex direction={['column', 'column', 'row', 'row']}>
         <Box flex='1'>
-          <Text mb='6' w='85%'>
+          <Text mb='6' w={['100%', '100%', '85%', '85%']}>
             With over than 3 years of development experience I am familier with
             technologies like Arduino, Svelte, React, Node, Django and Wordpres.
             I love to make cool and modern projects to sharpen my skills.
