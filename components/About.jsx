@@ -8,8 +8,7 @@ function About() {
         mb='50'
         fontSize='4xl'
         fontWeight='bold'
-        textTransform='uppercase'
-      >
+        textTransform='uppercase'>
         About
       </Text>
       <Flex direction={['column', 'column', 'row', 'row']}>
@@ -36,7 +35,12 @@ function About() {
 
         {/* Img */}
         <Box mt={['30', '30', '0', '0']} flex='3'>
-          <Image w='90%' rounded='md' src='/profile.png' />
+          <Image
+            alt='Profile image for the about section'
+            w='90%'
+            rounded='md'
+            src='/profile.png'
+          />
         </Box>
       </Flex>
     </Container>

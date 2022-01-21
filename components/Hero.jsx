@@ -15,17 +15,15 @@ function Hero() {
       <Container w='full' maxW='container.xl'>
         <Flex
           justify='space-between'
-          direction={['column', 'column', 'row', 'row']}
-        >
+          direction={['column', 'column', 'row', 'row']}>
           <Box marginBottom={['50', '50', '0', '0']} mr='75'>
             <Text
               fontSize='6xl'
               lineHeight='1'
               mb='6'
               fontWeight='800'
-	      fontFamily="Playfair Display"
-              w={['full', 'full', '80%', '80%']}
-            >
+              fontFamily='Playfair Display'
+              w={['full', 'full', '80%', '80%']}>
               Let&apos;s Build Something More Exciting
             </Text>
 
@@ -44,6 +42,7 @@ function Hero() {
           </Box>
           <Box>
             <Image
+              alt='3d Rocket Banner Image For The Hero Section'
               display={['none', 'none', 'block', 'block']}
               transform={[
                 'translateY(0) rotate(45deg) scale(.8)',

@@ -65,8 +65,7 @@ function Skills() {
         fontWeight='bold'
         textTransform='uppercase'
         fontSize='4xl'
-        className='section-heading'
-      >
+        className='section-heading'>
         Skills
       </Text>
       <Flex direction={['column', 'column', 'row', 'row']}>
@@ -161,9 +160,8 @@ const SkillItem = ({ imgSrc, helper }) => {
       alignItems='center'
       justifyContent='center'
       className='skillItem'
-      cursor='pointer'
-    >
-      <Image w='70%' src={imgSrc} />
+      cursor='pointer'>
+      <Image alt='Skill Image' w='70%' src={imgSrc} />
       {helper && <Text className='helper'>{helper}</Text>}
     </Box>
   )

@@ -38,15 +38,13 @@ const Work = () => {
         className='section-heading'
         fontSize='3xl'
         fontWeight='bold'
-        mb='30'
-      >
+        mb='30'>
         Top Projects
       </Text>
       <Flex
         alignItems='center'
         direction={['column', 'column', 'row', 'row']}
-        justifyContent='center'
-      >
+        justifyContent='center'>
         {projects.map((project, i) => (
           <ProjectCrd
             key={i}
@@ -75,18 +73,17 @@ const ProjectCrd = ({ img, github, title, desc }) => {
       boxShadow='lg'
       rounded='md'
       mr={['0', '0', '4', '4']}
-      mb={['4', '4', '0', '0']}
-    >
+      mb={['4', '4', '0', '0']}>
       <Text
         // fontFamily='Playfair Display'
         textAlign='center'
         mb='6'
         fontWeight='800'
-        fontSize='3xl'
-      >
+        fontSize='3xl'>
         {title}
       </Text>
       <Image
+        alt='Project Image'
         src={img}
         rounded='md'
         objectFit='cover'
