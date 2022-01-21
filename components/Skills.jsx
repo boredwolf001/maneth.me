@@ -50,7 +50,6 @@ function Skills() {
       })
       const data = await res.json()
 
-      console.log(data)
       setGithubStats(data)
       setLoading(false)
     }
