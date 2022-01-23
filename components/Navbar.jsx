@@ -3,7 +3,8 @@ import {
   Container,
   Flex,
   IconButton,
-  Link,
+  Image,
+  Link as ChakraLink,
   Menu,
   MenuButton,
   MenuItem,
@@ -13,18 +14,19 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ModeToggle from './ModeToggle'
+import Link from 'next/link'
 
-const LinkItem = ({ children, isLast, to = '/', ...rest }) => {
+const LinkItem = ({ children, to = '/', ...rest }) => {
   return (
-    <Link href={to}>
-      <Text px='1' py='1' display='block' {...rest}>
+    <ChakraLink href={to}>
+      <Text px='1' py='1' cursor='pointer' display='block' {...rest}>
         {children}
       </Text>
-    </Link>
+    </ChakraLink>
   )
 }
 
-function Nabvar() {
+function Navbar() {
   return (
     <Container maxW='container.xl'>
       <Flex
@@ -37,30 +39,28 @@ function Nabvar() {
         bg='transparent'
         color={{ dark: 'white', light: 'black' }}
         position='sticky'
-        top='0'
-      >
+        top='0'>
         <Box>
           <Text fontWeight='bold' fontSize='3xl'>
-            Portfolio
+            <Image src='/logo.png' w='13%' alt='' />
           </Text>
         </Box>
 
         {/* Links */}
         <Box
           display={['none', 'none', 'block', 'block']}
-          flexBasis={{ base: '100%', md: 'auto' }}
-        >
+          flexBasis={{ base: '100%', md: 'auto' }}>
           <Stack
             spacing={8}
             align='center'
             justify={'center'}
             direction={'row'}
-            pt={[4, 4, 0, 0]}
-          >
-            <LinkItem to='#about'>About Me</LinkItem>
-            <LinkItem to='#skills'>Skills</LinkItem>
-            <LinkItem to='#work'>Work</LinkItem>
-            <LinkItem to='#contact'>Contact</LinkItem>
+            pt={[4, 4, 0, 0]}>
+            <Link href='/#about'>About Me</Link>
+            <Link href='/#skills'>Skills</Link>
+            <Link href='/#work'>Work</Link>
+            <Link href='/#contact'>Contact</Link>
+            {/* <Link href='/blog'>Blog</Link> */}
 
             <ModeToggle />
           </Stack>
@@ -77,7 +77,7 @@ function Nabvar() {
 
             <MenuList>
               <MenuItem>About Me</MenuItem>
-              <MenuItem>Skils</MenuItem>
+              <MenuItem>Skills</MenuItem>
               <MenuItem>Work</MenuItem>
               <MenuItem>Contact</MenuItem>
             </MenuList>
@@ -88,4 +88,4 @@ function Nabvar() {
   )
 }
 
-export default Nabvar
+export default Navbar

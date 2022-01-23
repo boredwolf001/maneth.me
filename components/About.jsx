@@ -2,7 +2,7 @@ import { Box, Container, Flex, Heading, Image, Text } from '@chakra-ui/react'
 
 function About() {
   return (
-    <Container id='about' mt='70' maxW='container.xl'>
+    <Container id='about' mt='100' maxW='container.xl'>
       <Text
         className='section-heading'
         mb='50'

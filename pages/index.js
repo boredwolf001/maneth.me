@@ -11,13 +11,11 @@ import {
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
       <About />
       <Skills />
       <Work />
       <Contact />
-      <Footer />
     </>
   )
 }
