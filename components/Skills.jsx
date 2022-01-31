@@ -45,7 +45,7 @@ function Skills() {
       const res = await fetch('https://api.github.com/users/manethye', {
         method: 'GET',
         headers: {
-          Authorization: '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',
+          Authorization: process.env.GITHUB_ACCESS_TOKEN,
         },
       })
       const data = await res.json()

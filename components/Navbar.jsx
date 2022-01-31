@@ -16,16 +16,6 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import ModeToggle from './ModeToggle'
 import Link from 'next/link'
 
-const LinkItem = ({ children, to = '/', ...rest }) => {
-  return (
-    <ChakraLink href={to}>
-      <Text px='1' py='1' cursor='pointer' display='block' {...rest}>
-        {children}
-      </Text>
-    </ChakraLink>
-  )
-}
-
 function Navbar() {
   return (
     <Container maxW='container.xl'>
@@ -60,7 +50,7 @@ function Navbar() {
             <Link href='/#skills'>Skills</Link>
             <Link href='/#work'>Work</Link>
             <Link href='/#contact'>Contact</Link>
-            {/* <Link href='/blog'>Blog</Link> */}
+            <Link href='/blog'>Blog</Link>
 
             <ModeToggle />
           </Stack>
@@ -76,10 +66,21 @@ function Navbar() {
             />
 
             <MenuList>
-              <MenuItem>About Me</MenuItem>
-              <MenuItem>Skills</MenuItem>
-              <MenuItem>Work</MenuItem>
-              <MenuItem>Contact</MenuItem>
+              <MenuItem>
+                <Link href='/#about'>About Me</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href='/#skills'>Skills</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href='/#work'>Work</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href='/#contact'>Contact</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href='/blog'>Contact</Link>
+              </MenuItem>
             </MenuList>
           </Menu>
         </Box>

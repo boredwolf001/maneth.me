@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Source+Code+Pro&display=swap');
+
+.htmlWrapper > * {
+  margin: 20px 0 !important;
+}
+
+.htmlWrapper h1 {
+  font-size: 30px !important;
+  font-weight: 500;
+}
+
+.htmlWrapper h2 {
+  font-size: 26px !important;
+  font-weight: 500;
+}
+
+.htmlWrapper h3 {
+  font-size: 23px !important;
+  font-weight: 500;
+}
+
+.htmlWrapper h4 {
+  font-size: 20px !important;
+  font-weight: 500;
+}
+
+.htmlWrapper h5 {
+  font-size: 18px !important;
+  font-weight: 500;
+}
+
+.htmlWrapper code {
+  font-family: 'Source Code Pro', monospace;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.htmlWrapper a {
+  cursor: pointer;
+  color: cornflowerblue;
+}
+
+.htmlWrapper a:hover {
+  text-decoration: underline;
+}
