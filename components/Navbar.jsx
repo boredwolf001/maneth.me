@@ -46,11 +46,31 @@ function Navbar() {
             justify={'center'}
             direction={'row'}
             pt={[4, 4, 0, 0]}>
-            <Link href='/#about'>About Me</Link>
-            <Link href='/#skills'>Skills</Link>
-            <Link href='/#work'>Work</Link>
-            <Link href='/#contact'>Contact</Link>
-            <Link href='/blog'>Blog</Link>
+            <Link href='/#about'>
+              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
+                About Me
+              </Text>
+            </Link>
+            <Link href='/#skills'>
+              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
+                Skills
+              </Text>
+            </Link>
+            <Link href='/#work'>
+              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
+                Work
+              </Text>
+            </Link>
+            <Link href='/#contact'>
+              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
+                Contact
+              </Text>
+            </Link>
+            <Link href='/blog'>
+              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
+                Blog
+              </Text>
+            </Link>
 
             <ModeToggle />
           </Stack>

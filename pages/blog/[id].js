@@ -1,4 +1,4 @@
-import { Spacer, Box, Button, Container, Divider, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Divider, Text } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import showdown from 'showdown'
@@ -10,7 +10,7 @@ const converter = new showdown.Converter()
 function PostPage({ post }) {
   const disqusShortname = 'portfolio-9vskmfotbh'
   const disqusConfig = {
-    url: `http://localhost:3000/${post.id}`,
+    url: `http://maneth.me/${post.id}`,
     identifier: post.id,
     title: post.title,
   }
