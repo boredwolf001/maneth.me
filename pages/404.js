@@ -11,7 +11,7 @@ export default function Custom404() {
       </Head>
       <Box display='grid' placeItems='center'>
         <Heading textAlign='center' as='h1' fontSize='5xl'>
-          404 - Oops!! This page doesn't exists 🥺
+          404 - Oops!! This page doesn&spos;t exists 🥺
         </Heading>
         <Text mt='6'>
           Sorry, The Page you were looking for could not be found
