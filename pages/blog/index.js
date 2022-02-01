@@ -9,14 +9,12 @@ const converter = new showdown.Converter()
 function PostItem({ post }) {
   return (
     <GridItem w='100%'>
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={`/blog/${post.slug}`} passHref>
         <Box
           className='blog-card'
           bg='blackAlpha.300'
           boxShadow='lg'
-          cursor='pointer'
           mb='8'
-          p='5'
           cursor='pointer'
           border='2px'
           p='10'
@@ -50,6 +48,7 @@ function BlogPage({ posts }) {
           post?.content.toLowerCase().includes(term.toLocaleLowerCase())
       )
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [term])
 
   return (

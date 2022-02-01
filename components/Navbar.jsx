@@ -4,7 +4,6 @@ import {
   Flex,
   IconButton,
   Image,
-  Link as ChakraLink,
   Menu,
   MenuButton,
   MenuItem,
@@ -46,27 +45,27 @@ function Navbar() {
             justify={'center'}
             direction={'row'}
             pt={[4, 4, 0, 0]}>
-            <Link href='/#about'>
+            <Link passHref href='/#about'>
               <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
                 About Me
               </Text>
             </Link>
-            <Link href='/#skills'>
+            <Link passHref href='/#skills'>
               <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
                 Skills
               </Text>
             </Link>
-            <Link href='/#work'>
+            <Link passHref href='/#work'>
               <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
                 Work
               </Text>
             </Link>
-            <Link href='/#contact'>
+            <Link passHref href='/#contact'>
               <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
                 Contact
               </Text>
             </Link>
-            <Link href='/blog'>
+            <Link passHref href='/blog'>
               <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
                 Blog
               </Text>
@@ -87,19 +86,29 @@ function Navbar() {
 
             <MenuList>
               <MenuItem>
-                <Link href='/#about'>About Me</Link>
+                <Link passHref href='/#about'>
+                  About Me
+                </Link>
               </MenuItem>
               <MenuItem>
-                <Link href='/#skills'>Skills</Link>
+                <Link passHref href='/#skills'>
+                  Skills
+                </Link>
               </MenuItem>
               <MenuItem>
-                <Link href='/#work'>Work</Link>
+                <Link passHref href='/#work'>
+                  Work
+                </Link>
               </MenuItem>
               <MenuItem>
-                <Link href='/#contact'>Contact</Link>
+                <Link passHref href='/#contact'>
+                  Contact
+                </Link>
               </MenuItem>
               <MenuItem>
-                <Link href='/blog'>Contact</Link>
+                <Link passHref href='/blog'>
+                  Contact
+                </Link>
               </MenuItem>
             </MenuList>
           </Menu>
