@@ -4,6 +4,7 @@ import Link from 'next/link'
 import showdown from 'showdown'
 import styles from '../../styles/BlogPage.module.css'
 import { DiscussionEmbed } from 'disqus-react'
+import { getBlogpost, listPosts } from '../../lib/content'
 
 const converter = new showdown.Converter()
 
@@ -17,17 +18,19 @@ function PostPage({ post }) {
 
   return (
     <Container maxW='container.lg' className={styles.container}>
-      <Text mb='2' fontSize='4xl' fontWeight='bold'>
+      <Text fontSize='4xl' fontWeight='bold'>
         {post.title}
       </Text>
-      <Text opacity='.7'>By {post.user.login}</Text>
-      <Divider mb='10' />
+      <Text opacity='.7' mb='2'>
+        By {post.user.login}
+      </Text>
+      <Divider mb='8' />
 
       {/* Div */}
       <Box
         className={styles.htmlWrapper}
         dangerouslySetInnerHTML={{
-          __html: converter.makeHtml(post.body),
+          __html: post.content,
         }}></Box>
 
       <Link href='/blog' passHref>
@@ -46,12 +49,10 @@ function PostPage({ post }) {
 }
 
 export const getStaticPaths = async () => {
-  const data = await fetch(
-    'https://api.github.com/repos/manethye/chakra-ui-portfolio/issues?label=article'
-  ).then(r => r.json())
+  const posts = await listPosts()
 
-  const paths = data.map(post => ({
-    params: { id: post.id.toString() },
+  const paths = posts.map(post => ({
+    params: { slug: post.slug },
   }))
 
   return {
@@ -61,15 +62,11 @@ export const getStaticPaths = async () => {
 }
 
 export async function getStaticProps({ params }) {
-  const posts = await fetch(
-    `https://api.github.com/repos/manethye/chakra-ui-portfolio/issues`
-  ).then(r => r.json())
-
-  const post = posts.find(post => post.id == params.id)
+  const post = await getBlogpost(params.slug)
 
   return {
     props: {
-      post: post,
+      post,
     },
   }
 }
