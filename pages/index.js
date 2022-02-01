@@ -1,16 +1,12 @@
-import {
-  About,
-  Hero,
-  Navbar,
-  Skills,
-  Work,
-  Contact,
-  Footer,
-} from '../components'
+import Head from 'next/head'
+import { About, Hero, Skills, Work, Contact } from '../components'
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Maneth | Developer</title>
+      </Head>
       <Hero />
       <About />
       <Skills />

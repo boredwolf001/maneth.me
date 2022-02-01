@@ -3,6 +3,7 @@ import {
   Button,
   Container,
   Flex,
+  Heading,
   Image,
   Link,
   Text,
@@ -17,15 +18,15 @@ function Hero() {
           justify='space-between'
           direction={['column', 'column', 'row', 'row']}>
           <Box marginBottom={['50', '50', '0', '0']} mr='75'>
-            <Text
+            <Heading
+              as='h1'
               fontSize='6xl'
+              fontWeight='black'
               lineHeight='1'
               mb='6'
-              fontWeight='800'
-              // fontFamily='Playfair Display'
               w={['full', 'full', '80%', '80%']}>
               Let&apos;s Build Something More Exciting
-            </Text>
+            </Heading>
 
             {/* Para */}
             <Text maxW='xl' mt='2' mb='5'>
@@ -44,12 +45,6 @@ function Hero() {
             <Image
               alt='3d Rocket Banner Image For The Hero Section'
               display={['none', 'none', 'block', 'block']}
-              // transform={[
-              //   'translateY(0) rotate(45deg) scale(.8)',
-              //   'translateY(0) rotate(45deg) scale(.8)',
-              //   'translateY(-100px) rotate(45deg) scale(.8)',
-              //   'translateY(-100px) rotate(45deg) scale(.8)',
-              // ]}
               w='75%'
               src='/banner.svg'
             />

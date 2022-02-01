@@ -7,6 +7,7 @@ import {
   Image,
   Link,
   useColorModeValue,
+  Heading,
 } from '@chakra-ui/react'
 import React from 'react'
 
@@ -34,13 +35,9 @@ const Work = () => {
 
   return (
     <Container id='work' maxW='container.xl' mt='100'>
-      <Text
-        className='section-heading'
-        fontSize='3xl'
-        fontWeight='bold'
-        mb='10'>
+      <Heading as='h2' className='section-heading' fontSize='3xl' mb='10'>
         Top Projects
-      </Text>
+      </Heading>
       <Flex
         alignItems='center'
         direction={['column', 'column', 'row', 'row']}
@@ -65,23 +62,20 @@ const ProjectCrd = ({ img, github, title, desc }) => {
   return (
     <Box
       p='4'
-      // bg={{
-      //   dark: 'rgba(0, 0, 0, 0.8)',
-      //   light: '',
-      // }}
+      className='project-card'
       bg={cardColor}
       boxShadow='lg'
       rounded='md'
       mr={['0', '0', '4', '4']}
       mb={['4', '4', '0', '0']}>
-      <Text
-        // fontFamily='Playfair Display'
+      <Heading
+        as='h3'
         textAlign='center'
         mb='6'
         fontWeight='800'
         fontSize='3xl'>
         {title}
-      </Text>
+      </Heading>
       <Image
         alt='Project Image'
         src={img}

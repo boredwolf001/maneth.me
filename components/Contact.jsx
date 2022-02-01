@@ -5,6 +5,7 @@ import {
   Flex,
   FormControl,
   FormLabel,
+  Heading,
   Input,
   Text,
   Textarea,
@@ -13,37 +14,24 @@ import {
 function Contact() {
   return (
     <Container id='contact' mt='100' maxW='container.xl'>
-      <Text
-        mb='35'
-        fontWeight='bold'
-        textTransform='uppercase'
-        className='section-heading'>
+      <Heading mb='35' as='h2' className='section-heading'>
         Contact Me
-      </Text>
+      </Heading>
       <Flex
         direction={['column', 'column', 'row', 'row']}
         justify='space-around'>
         <Box flex='1'>
           <Box maxW={{ lg: '85%', xl: '85%' }}>
-            <Text fontWeight='900' fontSize='4xl' mb='3'>
-              Any,{' '}
-              {/* <Box
-                bgGradient='linear(to-l, #7928CA, #FF0080)'
-                bgClip='text'
-                display='inline-block'
-              > */}
-              <span className='gradient-text'>Collaborators</span>
-              {/* </Box> */}? Let&apos;s have a chat!
-            </Text>
+            <Heading as='h3' fontWeight='900' fontSize='4xl' mb='3'>
+              Any, Collaborators ? Let&apos;s have a chat!
+            </Heading>
 
-            {/* Text */}
-            <Text fontSize='md' lineHeight='2'>
+            <Text lineHeight='2'>
               I am always up for cool ideas and projects. If you want to have a
               chat about any of the projects I worked on feel free to get in
               touch!
             </Text>
 
-            {/* Detail boxes */}
             <Box mt='10'>
               <Flex>
                 <ion-icon name='call-outline' size='large'></ion-icon>

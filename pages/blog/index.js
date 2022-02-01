@@ -1,4 +1,5 @@
 import { Box, Container, Grid, GridItem, Input, Text } from '@chakra-ui/react'
+import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import showdown from 'showdown'
@@ -52,27 +53,32 @@ function BlogPage({ posts }) {
   }, [term])
 
   return (
-    <Container maxW='container.xl'>
-      <Input
-        w='600px'
-        placeholder='Search query..'
-        onInput={e => setTerm(e.target.value)}
-      />
+    <>
+      <Head>
+        <title>Blog - Maneth | Developer</title>
+      </Head>
+      <Container maxW='container.xl'>
+        <Input
+          w='600px'
+          placeholder='Search query..'
+          onInput={e => setTerm(e.target.value)}
+        />
 
-      <Grid
-        mt='12'
-        templateColumns={[
-          'repeat(1, 1fr)',
-          'repeat(1, 1fr)',
-          'repeat(2, 1fr)',
-          'repeat(2, 1fr)',
-        ]}
-        gap={10}>
-        {newPosts.map(post => (
-          <PostItem post={post} key={parseInt(post.id)} />
-        ))}
-      </Grid>
-    </Container>
+        <Grid
+          mt='12'
+          templateColumns={[
+            'repeat(1, 1fr)',
+            'repeat(1, 1fr)',
+            'repeat(2, 1fr)',
+            'repeat(2, 1fr)',
+          ]}
+          gap={10}>
+          {newPosts.map(post => (
+            <PostItem post={post} key={parseInt(post.id)} />
+          ))}
+        </Grid>
+      </Container>
+    </>
   )
 }
 

@@ -3,14 +3,15 @@ import { Box, Container, Flex, Heading, Image, Text } from '@chakra-ui/react'
 function About() {
   return (
     <Container id='about' mt='100' maxW='container.xl'>
-      <Text
+      <Heading
         className='section-heading'
         mb='50'
+        as='h2'
         fontSize='4xl'
         fontWeight='bold'
         textTransform='uppercase'>
         About
-      </Text>
+      </Heading>
       <Flex direction={['column', 'column', 'row', 'row']}>
         <Box flex='2'>
           <Text fontSize='4xl' mb='6' fontWeight='bold'>

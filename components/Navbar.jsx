@@ -30,12 +30,11 @@ function Navbar() {
         position='sticky'
         top='0'>
         <Box>
-          <Text fontWeight='bold' fontSize='3xl'>
-            <Image src='/logo.png' w='13%' alt='' />
-          </Text>
+          <Link passHref href='/'>
+            <Image src='/logo.png' w='13%' alt='Logo' />
+          </Link>
         </Box>
 
-        {/* Links */}
         <Box
           display={['none', 'none', 'block', 'block']}
           flexBasis={{ base: '100%', md: 'auto' }}>

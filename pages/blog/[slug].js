@@ -1,12 +1,17 @@
-import { Box, Button, Container, Divider, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Text,
+  Heading,
+} from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
-import showdown from 'showdown'
 import styles from '../../styles/BlogPage.module.css'
 import { DiscussionEmbed } from 'disqus-react'
 import { getBlogpost, listPosts } from '../../lib/content'
-
-const converter = new showdown.Converter()
+import Head from 'next/head'
 
 function PostPage({ post }) {
   const disqusShortname = 'portfolio-9vskmfotbh'
@@ -17,34 +22,39 @@ function PostPage({ post }) {
   }
 
   return (
-    <Container maxW='container.lg' className={styles.container}>
-      <Text fontSize='4xl' fontWeight='bold'>
-        {post.title}
-      </Text>
-      <Text opacity='.7' mb='2'>
-        By {post.user.login}
-      </Text>
-      <Divider mb='8' />
+    <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      <Container maxW='container.lg' className={styles.container}>
+        <Heading as='h1' fontSize='4xl' fontWeight='bold'>
+          {post.title}
+        </Heading>
+        <Text opacity='.7' mb='2'>
+          By {post.user.login}
+        </Text>
 
-      {/* Div */}
-      <Box
-        className={styles.htmlWrapper}
-        dangerouslySetInnerHTML={{
-          __html: post.content,
-        }}></Box>
+        <Divider mb='8' />
 
-      <Link href='/blog' passHref>
-        <Button
-          leftIcon={<ChevronLeftIcon fontSize='20' />}
-          my='10'
-          variant='outline'
-          colorScheme='teal'>
-          Go Back
-        </Button>
-      </Link>
+        <Box
+          className={styles.htmlWrapper}
+          dangerouslySetInnerHTML={{
+            __html: post.content,
+          }}></Box>
 
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-    </Container>
+        <Link href='/blog' passHref>
+          <Button
+            leftIcon={<ChevronLeftIcon fontSize='20' />}
+            my='10'
+            variant='outline'
+            colorScheme='teal'>
+            Go Back
+          </Button>
+        </Link>
+
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      </Container>
+    </>
   )
 }
 

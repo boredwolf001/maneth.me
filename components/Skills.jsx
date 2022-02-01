@@ -9,6 +9,7 @@ import {
   Stack,
   HStack,
   useColorModeValue,
+  Heading,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 
@@ -59,14 +60,9 @@ function Skills() {
 
   return (
     <Container id='skills' maxW='container.xl' mt='100'>
-      <Text
-        mb='30'
-        fontWeight='bold'
-        textTransform='uppercase'
-        fontSize='4xl'
-        className='section-heading'>
+      <Heading mb='30' as='h2' fontSize='4xl' className='section-heading'>
         Skills
-      </Text>
+      </Heading>
       <Flex direction={['column', 'column', 'row', 'row']}>
         <Box flex='1'>
           <Text mb='6' w={['100%', '100%', '85%', '85%']}>

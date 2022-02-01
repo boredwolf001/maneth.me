@@ -9,8 +9,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Maneth | Developer</title>
         <link rel='shortcut icon' href='/favicon.png' />
+        <meta
+          name='description'
+          content='I am maneth full-stack dev. Portfolio site of maneth yethmin'
+        />
         <script
           type='module'
           defer
