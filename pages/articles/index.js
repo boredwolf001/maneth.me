@@ -1,16 +1,14 @@
+import { gql } from '@apollo/client'
 import { Box, Container, Grid, GridItem, Input, Text } from '@chakra-ui/react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import showdown from 'showdown'
-import { listPosts } from '../../lib/content'
-
-const converter = new showdown.Converter()
+import client from '../../lib/apollo'
 
 function PostItem({ post }) {
   return (
     <GridItem w='100%'>
-      <Link href={`/blog/${post.slug}`} passHref>
+      <Link href={`/articles/${post.slug}`} passHref>
         <Box
           className='blog-card'
           bg='blackAlpha.300'
@@ -25,11 +23,12 @@ function PostItem({ post }) {
             {post.title}
           </Text>
           <Text mb='3' fontSize='sm' opacity='.6'>
-            {post.date.toISOString().split('T')[0]}
+            {new Date(post.date).toDateString()}
           </Text>
 
           <Text maxW='600' noOfLines={[1, 2, 3, 3]}>
-            {converter.makeHtml(post.content).replace(/<[^>]*>?/gm, '')}
+            {post.excerpt.replace(/<[^>]*>?/gm, '') ||
+              post.content.replace(/<[^>]*>?/gm, '')}
           </Text>
         </Box>
       </Link>
@@ -45,8 +44,8 @@ function BlogPage({ posts }) {
     setNewPosts(
       posts.filter(
         post =>
-          post?.title.toLowerCase().includes(term.toLocaleLowerCase()) ||
-          post?.content.toLowerCase().includes(term.toLocaleLowerCase())
+          post?.node?.title.toLowerCase().includes(term.toLocaleLowerCase()) ||
+          post?.node?.content.toLowerCase().includes(term.toLocaleLowerCase())
       )
     )
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -55,12 +54,12 @@ function BlogPage({ posts }) {
   return (
     <>
       <Head>
-        <title>Blog - Maneth | Developer</title>
+        <title>Blog</title>
       </Head>
       <Container maxW='container.xl'>
         <Input
           w='600px'
-          placeholder='Search query..'
+          placeholder='Search term..'
           onInput={e => setTerm(e.target.value)}
         />
 
@@ -74,7 +73,7 @@ function BlogPage({ posts }) {
           ]}
           gap={10}>
           {newPosts.map(post => (
-            <PostItem post={post} key={parseInt(post.id)} />
+            <PostItem post={post.node} key={parseInt(post.id)} />
           ))}
         </Grid>
       </Container>
@@ -83,10 +82,32 @@ function BlogPage({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  const posts = await listPosts()
+  const query = gql`
+    {
+      posts {
+        edges {
+          node {
+            author {
+              node {
+                name
+              }
+            }
+            date
+            title
+            content
+            slug
+            excerpt
+          }
+        }
+      }
+    }
+  `
+  const { data } = await client.query({
+    query,
+  })
 
   return {
-    props: { posts },
+    props: { posts: data.posts.edges },
   }
 }
 

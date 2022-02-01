@@ -10,8 +10,9 @@ import { ChevronLeftIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import styles from '../../styles/BlogPage.module.css'
 import { DiscussionEmbed } from 'disqus-react'
-import { getBlogpost, listPosts } from '../../lib/content'
 import Head from 'next/head'
+import { gql } from '@apollo/client'
+import client from '../../lib/apollo'
 
 function PostPage({ post }) {
   const disqusShortname = 'portfolio-9vskmfotbh'
@@ -31,7 +32,7 @@ function PostPage({ post }) {
           {post.title}
         </Heading>
         <Text opacity='.7' mb='2'>
-          By {post.user.login}
+          By {post.author.node.name}
         </Text>
 
         <Divider mb='8' />
@@ -42,7 +43,7 @@ function PostPage({ post }) {
             __html: post.content,
           }}></Box>
 
-        <Link href='/blog' passHref>
+        <Link href='/articles' passHref>
           <Button
             leftIcon={<ChevronLeftIcon fontSize='20' />}
             my='10'
@@ -59,10 +60,27 @@ function PostPage({ post }) {
 }
 
 export const getStaticPaths = async () => {
-  const posts = await listPosts()
+  const query = gql`
+    {
+      posts {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `
+  const {
+    data: {
+      posts: { edges },
+    },
+  } = await client.query({
+    query,
+  })
 
-  const paths = posts.map(post => ({
-    params: { slug: post.slug },
+  const paths = edges.map(post => ({
+    params: { slug: post.node.slug },
   }))
 
   return {
@@ -72,7 +90,27 @@ export const getStaticPaths = async () => {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getBlogpost(params.slug)
+  const query = gql`
+    {
+      post(id: "${params.slug}", idType: SLUG) {
+        id
+        author {
+          node {
+            name
+          }
+        }
+        title
+        content
+        date
+      }
+    }
+  `
+
+  const {
+    data: { post },
+  } = await client.query({
+    query,
+  })
 
   return {
     props: {

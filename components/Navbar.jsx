@@ -64,7 +64,7 @@ function Navbar() {
                 Contact
               </Text>
             </Link>
-            <Link passHref href='/blog'>
+            <Link passHref href='/articles'>
               <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
                 Blog
               </Text>

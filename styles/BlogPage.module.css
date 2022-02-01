@@ -30,7 +30,7 @@
 }
 
 .htmlWrapper code {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Source Code Pro', monospace !important;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
