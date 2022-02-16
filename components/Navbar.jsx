@@ -9,11 +9,11 @@ import {
   MenuItem,
   MenuList,
   Stack,
-  Text,
+  Link,
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 import ModeToggle from './ModeToggle'
-import Link from 'next/link'
+import NextLink from 'next/link'
 
 function Navbar() {
   return (
@@ -27,8 +27,7 @@ function Navbar() {
         mb={8}
         bg='transparent'
         color={{ dark: 'white', light: 'black' }}
-        position='sticky'
-        top='0'>
+        style={{ position: 'sticky', top: 0 }}>
         <Box>
           <Link passHref href='/'>
             <Image src='/logo.png' w='13%' alt='Logo' />
@@ -44,31 +43,23 @@ function Navbar() {
             justify={'center'}
             direction={'row'}
             pt={[4, 4, 0, 0]}>
-            <Link passHref href='/#about'>
-              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
-                About Me
-              </Text>
+            <NextLink href='/#about'>
+              <Link>About</Link>
+            </NextLink>
+            <NextLink href='/#skills'>
+              <Link>Skills</Link>
+            </NextLink>
+            <Link href='/#work'>
+              <Link>Work</Link>
             </Link>
-            <Link passHref href='/#skills'>
-              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
-                Skills
-              </Text>
-            </Link>
-            <Link passHref href='/#work'>
-              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
-                Work
-              </Text>
-            </Link>
-            <Link passHref href='/#contact'>
-              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
-                Contact
-              </Text>
-            </Link>
-            <Link passHref href='/articles'>
-              <Text opacity='.9' cursor='pointer' _hover={{ opacity: 1 }}>
-                Blog
-              </Text>
-            </Link>
+            <NextLink href='/#contact'>
+              <Link>Contact</Link>
+            </NextLink>
+            <NextLink passHref href='https://maneth.hashnode.dev'>
+              <Link>
+                Blog <ExternalLinkIcon />
+              </Link>
+            </NextLink>
 
             <ModeToggle />
           </Stack>
@@ -105,8 +96,8 @@ function Navbar() {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link passHref href='/blog'>
-                  Contact
+                <Link passHref href='https://maneth.hashnode.dev'>
+                  Blog
                 </Link>
               </MenuItem>
             </MenuList>
