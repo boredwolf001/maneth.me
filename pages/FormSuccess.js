@@ -16,7 +16,7 @@ const formSuccessPage = () => (
       style={{ width: 350, height: 350, marginTop: '30px' }}
     />
     <Heading>
-      Thanks for Contacting me! I'll reply you as soon as possible.
+      Thanks for Contacting me! I&apos;ll reply you as soon as possible.
     </Heading>
     <Button colorScheme='teal' marginTop='6'>
       <Link href='/'>Go Back</Link>
