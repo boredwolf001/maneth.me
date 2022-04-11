@@ -16,7 +16,8 @@ function Hero() {
       <Container w='full' maxW='container.xl'>
         <Flex
           justify='space-between'
-          direction={['column', 'column', 'row', 'row']}>
+          direction={['column', 'column', 'row', 'row']}
+        >
           <Box marginBottom={['50', '50', '0', '0']} mr='75'>
             <Heading
               as='h1'
@@ -24,11 +25,11 @@ function Hero() {
               fontWeight='black'
               lineHeight='1'
               mb='6'
-              w={['full', 'full', '80%', '80%']}>
+              w={['full', 'full', '80%', '80%']}
+            >
               Let&apos;s Build Something More Exciting
             </Heading>
 
-            {/* Para */}
             <Text maxW='xl' mt='2' mb='5'>
               I&apos;m a guy from Sri Lanka who love to code and experiment with
               new technologies and solutions. I build unique and fullstack web

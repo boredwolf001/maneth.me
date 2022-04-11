@@ -41,7 +41,8 @@ const Work = () => {
       <Flex
         alignItems='center'
         direction={['column', 'column', 'row', 'row']}
-        justifyContent='center'>
+        justifyContent='center'
+      >
         {projects.map((project, i) => (
           <ProjectCrd
             key={i}
@@ -57,7 +58,7 @@ const Work = () => {
 }
 
 const ProjectCrd = ({ img, github, title, desc }) => {
-  const cardColor = useColorModeValue('whiteAlpha.400', 'blackAlpha.400')
+  const cardColor = useColorModeValue('whitealpha.400', 'blackAlpha.400')
 
   return (
     <Box
@@ -67,13 +68,15 @@ const ProjectCrd = ({ img, github, title, desc }) => {
       boxShadow='lg'
       rounded='md'
       mr={['0', '0', '4', '4']}
-      mb={['4', '4', '0', '0']}>
+      mb={['4', '4', '0', '0']}
+    >
       <Heading
         as='h3'
         textAlign='center'
         mb='6'
         fontWeight='800'
-        fontSize='3xl'>
+        fontSize='3xl'
+      >
         {title}
       </Heading>
       <Image

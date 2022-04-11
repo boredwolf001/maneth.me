@@ -10,8 +10,15 @@ import {
   Text,
   Textarea,
 } from '@chakra-ui/react'
+import { useForm, ValidationError } from '@formspree/react'
+import Router from 'next/router'
 
 function Contact() {
+  const [state, handleSubmit] = useForm('moqrkeqz')
+  if (state.succeeded) {
+    Router.push('/FormSuccess')
+  }
+
   return (
     <Container id='contact' mt='100' maxW='container.xl'>
       <Heading mb='35' as='h2' className='section-heading'>
@@ -19,7 +26,8 @@ function Contact() {
       </Heading>
       <Flex
         direction={['column', 'column', 'row', 'row']}
-        justify='space-around'>
+        justify='space-around'
+      >
         <Box flex='1'>
           <Box maxW={{ lg: '85%', xl: '85%' }}>
             <Heading as='h3' fontWeight='900' fontSize='4xl' mb='3'>
@@ -53,22 +61,43 @@ function Contact() {
 
         <Box mt={[10, 10, 0, 0]} flex='1'>
           <Box w={['100%', '100%', '85%', '85%']}>
-            <form>
-              <FormControl colorScheme='teal' mb='5'>
+            <form onSubmit={handleSubmit}>
+              <FormControl mb='5'>
                 <FormLabel htmlFor='name'>Name</FormLabel>
-                <Input id='text' type='text' />
+                <Input id='name' name='name' type='text' />
+                <ValidationError
+                  prefix='Name'
+                  field='name'
+                  errors={state.errors}
+                />
               </FormControl>
-              <FormControl colorScheme='teal' mb='5'>
+              <FormControl mb='5'>
                 <FormLabel htmlFor='email'>Email address</FormLabel>
-                <Input id='email' type='email' />
+                <Input id='email' name='email' type='email' />
+                <ValidationError
+                  prefix='Email'
+                  field='email'
+                  errors={state.errors}
+                />
               </FormControl>
-              <FormControl colorScheme='teal' mb='4'>
+              <FormControl mb='4'>
                 <FormLabel htmlFor='message'>Message</FormLabel>
-                <Textarea id='message' />
+                <Textarea name='message' id='message' />
+                <ValidationError
+                  prefix='Message'
+                  field='message'
+                  errors={state.errors}
+                />
               </FormControl>
 
-              <Button w='full' colorScheme='teal' type='submit'>
-                Send
+              <Button
+                isLoading={state.submitting ? true : false}
+                loadingText='Submitting'
+                colorScheme='teal'
+                variant='outline'
+                type='submit'
+              >
+                Submit
               </Button>
             </form>
           </Box>

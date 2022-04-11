@@ -155,7 +155,8 @@ const SkillItem = ({ imgSrc, helper }) => {
       alignItems='center'
       justifyContent='center'
       className='skillItem'
-      cursor='pointer'>
+      cursor='pointer'
+    >
       <Image alt='Skill Image' w='70%' src={imgSrc} />
       {helper && <Text className='helper'>{helper}</Text>}
     </Box>

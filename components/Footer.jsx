@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 
 function Footer() {
-  const footerColor = useColorModeValue('whiteAlpha.500', 'blackAlpha.400')
+  const footerColor = useColorModeValue('whitealpha.500', 'blackAlpha.400')
 
   return (
     <Box mt='100' w='full' bgColor={footerColor} py='6'>
