@@ -9,7 +9,6 @@ function ModeToggle() {
     <IconButton
       onClick={toggleColorMode}
       variant='outline'
-      bg='yello.500'
       icon={
         colorMode === 'dark' ? (
           <SunIcon fontSize='xl' />

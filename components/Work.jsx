@@ -34,15 +34,14 @@ const Work = () => {
   ]
 
   return (
-    <Container id='work' maxW='container.xl' mt='100'>
+    <Box id='work' mt='100'>
       <Heading as='h2' className='section-heading' fontSize='3xl' mb='10'>
         Top Projects
       </Heading>
       <Flex
         alignItems='center'
         direction={['column', 'column', 'row', 'row']}
-        justifyContent='center'
-      >
+        justifyContent='center'>
         {projects.map((project, i) => (
           <ProjectCrd
             key={i}
@@ -53,7 +52,7 @@ const Work = () => {
           />
         ))}
       </Flex>
-    </Container>
+    </Box>
   )
 }
 
@@ -68,15 +67,13 @@ const ProjectCrd = ({ img, github, title, desc }) => {
       boxShadow='lg'
       rounded='md'
       mr={['0', '0', '4', '4']}
-      mb={['4', '4', '0', '0']}
-    >
+      mb={['4', '4', '0', '0']}>
       <Heading
         as='h3'
         textAlign='center'
         mb='6'
         fontWeight='800'
-        fontSize='3xl'
-      >
+        fontSize='3xl'>
         {title}
       </Heading>
       <Image
@@ -93,7 +90,11 @@ const ProjectCrd = ({ img, github, title, desc }) => {
         {desc}
       </Text>
 
-      <Link textDecor='none !important' href={github}>
+      <Link
+        href={github}
+        target='_blank'
+        textDecor='none !important'
+        rel='noopener noreferrer'>
         <Button variant='outline' colorScheme='teal' w='full'>
           View on Github
         </Button>

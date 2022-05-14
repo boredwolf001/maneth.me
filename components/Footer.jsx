@@ -30,36 +30,30 @@ function Footer() {
               mr='5'
               href='https://twitter.com/manethye'
               target='_blank'
-              rel='no-referrer'
-            >
+              rel='no-referrer'>
               <ion-icon
                 style={{ fontSize: '25px' }}
-                name='logo-twitter'
-              ></ion-icon>
+                name='logo-twitter'></ion-icon>
             </Link>
             <Link
               // p='3'
               mr='5'
               href='https://github.com/manethye'
               target='_blank'
-              rel='no-referrer'
-            >
+              rel='no-referrer'>
               <ion-icon
                 style={{ fontSize: '25px' }}
-                name='logo-github'
-              ></ion-icon>
+                name='logo-github'></ion-icon>
             </Link>
             <Link
               // p='3'
               mr='5'
               href='mailto:hello@maneth.me'
               target='_blank'
-              rel='no-referrer'
-            >
+              rel='no-referrer'>
               <ion-icon
                 style={{ fontSize: '25px' }}
-                name='mail-outline'
-              ></ion-icon>
+                name='mail-outline'></ion-icon>
             </Link>
           </Box>
         </Flex>

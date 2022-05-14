@@ -59,7 +59,7 @@ function Skills() {
   }, [])
 
   return (
-    <Container id='skills' maxW='container.xl' mt='100'>
+    <Box id='skills' mt='100'>
       <Heading mb='30' as='h2' fontSize='4xl' className='section-heading'>
         Skills
       </Heading>
@@ -142,7 +142,7 @@ function Skills() {
           </Box>
         </Box>
       </Flex>
-    </Container>
+    </Box>
   )
 }
 
@@ -155,8 +155,7 @@ const SkillItem = ({ imgSrc, helper }) => {
       alignItems='center'
       justifyContent='center'
       className='skillItem'
-      cursor='pointer'
-    >
+      cursor='pointer'>
       <Image alt='Skill Image' w='70%' src={imgSrc} />
       {helper && <Text className='helper'>{helper}</Text>}
     </Box>

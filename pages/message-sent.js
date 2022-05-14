@@ -1,27 +1,31 @@
 import React from 'react'
-import { Link, Flex, Heading, Button } from '@chakra-ui/react'
+import { Link, Flex, Heading, Button, Box } from '@chakra-ui/react'
 import Head from 'next/head'
 import Lottie from 'react-lottie-player'
 import lottieData from '../assets/message-sent.json'
 
 const formSuccessPage = () => (
-  <Flex alignItems='center' justifyContent='center' direction='column'>
+  <Box textAlign='center'>
     <Head>
-      <title>Thanks!</title>
+      <title>I will reach you soon!</title>
     </Head>
     <Lottie
       loop
       animationData={lottieData}
       play
-      style={{ width: 350, height: 350, marginTop: '30px' }}
+      style={{
+        width: 350,
+        height: 350,
+        marginTop: '30px',
+        marginInline: 'auto',
+        zIndex: -10,
+      }}
     />
-    <Heading>
-      Thanks for Contacting me! I&apos;ll reply you as soon as possible.
-    </Heading>
+    <Heading>Thanks for Contacting me! I&apos;ll reach you soon!</Heading>
     <Button colorScheme='teal' marginTop='6'>
       <Link href='/'>Go Back</Link>
     </Button>
-  </Flex>
+  </Box>
 )
 
 export default formSuccessPage

@@ -15,19 +15,19 @@ import Router from 'next/router'
 
 function Contact() {
   const [state, handleSubmit] = useForm('moqrkeqz')
+
   if (state.succeeded) {
-    Router.push('/FormSuccess')
+    Router.push('/message-sent')
   }
 
   return (
-    <Container id='contact' mt='100' maxW='container.xl'>
+    <Box id='contact' mt='100'>
       <Heading mb='35' as='h2' className='section-heading'>
         Contact Me
       </Heading>
       <Flex
         direction={['column', 'column', 'row', 'row']}
-        justify='space-around'
-      >
+        justify='space-around'>
         <Box flex='1'>
           <Box maxW={{ lg: '85%', xl: '85%' }}>
             <Heading as='h3' fontWeight='900' fontSize='4xl' mb='3'>
@@ -95,15 +95,14 @@ function Contact() {
                 loadingText='Submitting'
                 colorScheme='teal'
                 variant='outline'
-                type='submit'
-              >
+                type='submit'>
                 Submit
               </Button>
             </form>
           </Box>
         </Box>
       </Flex>
-    </Container>
+    </Box>
   )
 }
 
