@@ -1,5 +1,4 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
-import Atropos from 'atropos/react'
 
 function About() {
   return (
